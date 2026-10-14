@@ -37,6 +37,8 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private void OnUpgraded(Upgrade upgrade)
     {
         if (upgrade.Data != _data) return;
+        
+        _tooltip.UpdateTooltip(upgrade);
         Refresh();
     }
 
@@ -44,8 +46,7 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Refresh()
     {
-        _button.interactable =
-            !_upgrade.IsMaxLevel && _wallet.Money >= _upgrade.CurrentCost;
+        _button.interactable = !_upgrade.IsMaxLevel && _wallet.Money >= _upgrade.CurrentCost;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

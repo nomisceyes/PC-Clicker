@@ -4,6 +4,7 @@ using UnityEngine;
 public class DescriptionTooltip : MonoBehaviour
 {
     [SerializeField] private TMP_Text _description;
+    [SerializeField] private TMP_Text _cost;
     [SerializeField] private RectTransform _tooltipRectTransform;
     [SerializeField] private float _offsetX;
     [SerializeField] private float _offsetY;
@@ -12,6 +13,8 @@ public class DescriptionTooltip : MonoBehaviour
     {
         if (_description != null)
             _description.text = upgrade.Data.Description;
+
+        _cost.text = upgrade.CurrentCost.ToString();
     }
 
     public void ShowTooltip(Vector2 targetIcon)
