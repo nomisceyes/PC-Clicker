@@ -5,14 +5,25 @@ using UnityEngine.EventSystems;
 public class Computer : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private PopupSpawner _popup;
-
-    private int _amount;
-    public event Action<int> UpdateDisplay;
+    [SerializeField] private Wallet _wallet;
+    [SerializeField] private ComboSystem _combo;
+    
+    private int _baseClickPower = 1;
+    private int _bonusClickPower;
+    
+    public int ClickPower => _baseClickPower + _bonusClickPower;
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        _popup.Spawn(transform.position, 1);
-        _amount++;
-        UpdateDisplay?.Invoke(_amount);
+        int comboMult = _combo.RegisterClick();
+        int earned = ClickPower * comboMult;
+        
+        _popup.Spawn(transform.position, earned);
+        _wallet.Add(earned);
+    }
+    
+    public void IncreaseClickPower(int value)
+    {
+        _baseClickPower += value;
     }
 }

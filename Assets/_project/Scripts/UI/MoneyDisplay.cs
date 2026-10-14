@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class MoneyDisplay : MonoBehaviour
 {
-    [SerializeField] private Computer _computer;
+    [SerializeField] private Wallet _wallet;
     [SerializeField] private TextMeshProUGUI _text;
 
     private void OnEnable()
     {
-        _computer.UpdateDisplay += UpdateDisplay;
+        _wallet.OnMoneyChanged += UpdateDisplay;
     }
 
     private void OnDisable()
     {
-        _computer.UpdateDisplay -= UpdateDisplay;
+        _wallet.OnMoneyChanged -= UpdateDisplay;
     }
 
     private void UpdateDisplay(int value)

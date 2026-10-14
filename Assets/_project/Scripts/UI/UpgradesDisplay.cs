@@ -17,12 +17,12 @@ public class UpgradesDisplay : MonoBehaviour
             DisablePanel();
     }
 
-    public void EnablePanel()
+    private void EnablePanel()
     {
         _panel.SetActive(true);
     }
 
-    public void DisablePanel()
+    private void DisablePanel()
     {
         _panel.SetActive(false);
     }
