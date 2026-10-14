@@ -17,6 +17,6 @@ MonoBehaviour:
   Icon: {fileID: 0}
   BaseCost: 10
   CostMultiplier: 1.5
-  Effect: {fileID: 0}
+  Effect: {fileID: 11400000, guid: 78e5e2fb721e5de4e979da7292247446, type: 2}
   ValuePerLevel: 1
-  MaxLevel: 0
+  MaxLevel: 10

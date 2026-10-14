@@ -10,9 +10,6 @@ public class AutoClicker : MonoBehaviour
     private Coroutine _routine;
     private bool _running;
 
-    public int IncomePerTick => _incomePerTick;
-    public float Interval => _interval;
-
     public void IncreaseIncome(int value)
     {
         Debug.Log("Auto Click");
@@ -58,5 +55,6 @@ public class AutoClicker : MonoBehaviour
         }
     }
 
-    private void OnDisable() => StopLoop();
+    private void OnDisable() => 
+        StopLoop();
 }

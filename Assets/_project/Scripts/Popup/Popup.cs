@@ -20,6 +20,8 @@ public class Popup : MonoBehaviour
     {
         _text = GetComponent<TextMeshProUGUI>();
         _body = GetComponent<RectTransform>();
+        
+        _text.raycastTarget = false;
     }
 
     public void Init(Vector3 targetPos, float flyHeight = 30f)
