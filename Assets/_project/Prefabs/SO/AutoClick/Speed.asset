@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a37d1f2afe440a9bbc5d4e1746aea1, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: Assembly-CSharp::AutoSpeedEffect
-  SecondsPerLevel: 0.05
+  SecondsPerLevel: 0.02
