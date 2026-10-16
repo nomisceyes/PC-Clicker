@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6791b628ddf74ad3a2695e9a0d88122b, type: 3}
-  m_Name: AutoClickSpeed
+  m_Name: AutoClickUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   Title: Upgrade
   Description: "\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0443\u044E

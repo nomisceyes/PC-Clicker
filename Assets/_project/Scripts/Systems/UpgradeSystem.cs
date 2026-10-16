@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeSystem : MonoBehaviour
+public class UpgradeSystem : MonoBehaviour, IService
 {
-    [SerializeField] private UpgradeData[] _upgradeDatas;
+    [SerializeField] private List<UpgradeData> _upgradeData = new();
     [SerializeField] private UpgradeContextProvider _contextProvider;
     [SerializeField] private Wallet _wallet;
 
@@ -12,11 +12,14 @@ public class UpgradeSystem : MonoBehaviour
 
     public event Action<Upgrade> OnUpgraded;
 
-    private void Awake()
+    public void Init()
     {
-        foreach (var data in _upgradeDatas)
+        foreach (var data in _upgradeData)
             _upgrades[data] = new Upgrade(data);
     }
+
+    public void AddUpgradeData(UpgradeData data) =>
+        _upgradeData.Add(data);
 
     public Upgrade GetUpgrade(UpgradeData data)
     {
