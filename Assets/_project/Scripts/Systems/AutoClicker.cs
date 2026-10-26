@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AutoClicker : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
+    [SerializeField] private Wallet _wallet; // БЛЯТЬ КАКОЙ НАХУЙ КОШЕЛЕК СУКА
     [SerializeField] private float _interval = 1f;
     [SerializeField] private int _incomePerTick = 0;
 
@@ -51,7 +51,7 @@ public class AutoClicker : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_interval);
-            _wallet.Add(_incomePerTick);
+            _wallet.Add(_incomePerTick); // КАКОЙ КОШЕЛЕК ДОЛБАЕБИНА СДЕЛАТЬ ЧЕРЕЗ КОМПЬЮТЕР, КАКОГО ХУЯ У ТЕБЯ АВТОКЛИК ОБРАЩАЕТСЯ К КОШЕЛЬКУ
         }
     }
 
